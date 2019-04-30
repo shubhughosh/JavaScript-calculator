@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-4 mx-auto">
+                    <div class="card">
+                        <h1 id="brand">CWS</h1>
+                        <div class="display" id="entry"></div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <button class="calc" id="bn1"><h4 id="ac">AC</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc cancle" id="bn2"><h4 id="ac1">CE</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc ope" id="bn3"><h4 id="ac2">/</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc" id="bn4"><h4 id="ac3"><i class="fas fa-backspace text-light" id="icon"></i></h4></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn5"><h4 id="ac5">7</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn6"><h4 id="ac6">8</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn7"><h4 id="ac7">9</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc ope" id="bn8"><h4 id="ac8">*</h4></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn9"><h4 id="ac9">4</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn10"><h4 id="ac10">5</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn11"><h4 id="ac11">6</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc ope" id="bn12"><h4 id="ac12">-</h4></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn13"><h4 id="ac13">1</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn14"><h4 id="ac14">2</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn15"><h4 id="ac15">3</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc ope" id="bn16"><h4 id="ac16">+</h4></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn17"><h4 id="ac17">0</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc num" id="bn18"><h4 id="ac18">.</h4></button>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="calc equal" id="bn19"><h4 id="ac19">=</h4></button>
+                                </div>
+                            </div>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var data = ""
+            var display = ""
+              $(".num").click(function(){
+                  data = data + $(this).text();
+                  display = display + $(this).text()
+                  $("#entry").text(display);
+              });
+              $(".ope").click(function(){
+                  data = data + $(this).text()
+                  display = ""
+                  $("#entry").text(display)
+              })
+              $(".equal").click(function(){
+                  display = eval(data)
+                  $("#entry").text(display)
+              })
+              $(".cancle").click(function(){
+                  display = ""
+                  data = ""
+                  $("#entry").text(display)
+              })
+            });
+    </script>
+</body>
+</html>
